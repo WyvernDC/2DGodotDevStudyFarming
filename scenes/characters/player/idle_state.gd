@@ -28,7 +28,15 @@ func _on_next_transitions() -> void:
 	
 	if GameInputEvents.is_movement_input():
 		transition.emit("Walk")
-
+	#note that its player named cause its the name of the script file not its class_name(ImongPlayer)
+	if player.current_tool == DataTypes.Tools.Axewood && GameInputEvents.GamitonAngTools():
+		transition.emit("Chopping")
+	
+	if player.current_tool == DataTypes.Tools.Tillground && GameInputEvents.GamitonAngTools():
+		transition.emit("Tilling")
+	
+	if player.current_tool == DataTypes.Tools.WaterCrops && GameInputEvents.GamitonAngTools():
+		transition.emit("Watering")
 
 func _on_enter() -> void:
 	pass
