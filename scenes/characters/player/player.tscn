@@ -393,10 +393,11 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_t61fv"]
-radius = 8.062258
+[sub_resource type="CircleShape2D" id="CircleShape2D_42irl"]
+radius = 3.875
 
 [node name="Player" type="CharacterBody2D" unique_id=1819199708]
+collision_layer = 3
 script = ExtResource("1_6avc5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1913274466]
@@ -406,8 +407,8 @@ animation = &"idle_back"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=308262756]
-position = Vector2(0, -8)
-shape = SubResource("CircleShape2D_t61fv")
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_42irl")
 
 [node name="StateMachine" type="Node" parent="." unique_id=2035396763 node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("3_hss88")
@@ -437,3 +438,6 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 script = ExtResource("9_42irl")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1435586116]
+position_smoothing_speed = 50.0
